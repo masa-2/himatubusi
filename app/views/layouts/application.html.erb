@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Himatubusi</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <header class="header">
+      <nav class="nav">
+        <ul class="header_menu">
+          <li class="nav-link">ようこそ〇〇さん</li>
+          <li class="header_menu_title"><%= link_to "HIMATUBUSI", root_path, class: "nav-link" %></li>
+          <li>
+            <ul class="header_menu_inner">
+              <%# リストを作成するリンクは今後開発していくので、今は"#"にしておきます。 %>
+              <li><%= link_to "Log in", "#", class: "nav-link listNew" %></li>
+              <li><%= link_to "Sign out", "#", class: "nav-link" %></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <%= yield %>
+  </body>
+</html>
