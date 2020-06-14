@@ -10,22 +10,18 @@
   </head>
 
   <body>
+    <%= render 'partial/header' %>
 
-    <header class="header">
-      <nav class="nav">
-        <ul class="header_menu">
-          <li class="nav-link">ようこそ〇〇さん</li>
-          <li class="header_menu_title"><%= link_to "HIMATUBUSI", root_path, class: "nav-link" %></li>
-          <li>
-            <ul class="header_menu_inner">
-              <%# リストを作成するリンクは今後開発していくので、今は"#"にしておきます。 %>
-              <li><%= link_to "Log in", "#", class: "nav-link listNew" %></li>
-              <li><%= link_to "Sign out", "#", class: "nav-link" %></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
 
     <%= yield %>
   </body>
