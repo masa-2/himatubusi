@@ -70,3 +70,4 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'font-awesome-sass'
+gem "carrierwave"
