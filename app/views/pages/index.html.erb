@@ -3,6 +3,7 @@
 <%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
 
 
-<% Topic.all.find_each do |topic| %>
+<% @topics.find_each do |topic| %>
 <%= topic.description %>
 <% end %>
+<%= paginate @topics %>
