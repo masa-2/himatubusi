@@ -6,6 +6,7 @@
       <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Log in", user_session_path, method: :post, class: "nav-link listNew" %></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link listDestroy" %></li>
       </ul>
     </div>
   </nav>
