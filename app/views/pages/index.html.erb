@@ -1,9 +1,28 @@
-<p>ここは仮トップページになります。</p>
+<!--<p>ここは仮トップページになります。</p>-->
 
-<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
+<!--<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>-->
 
-
-<% @topics.find_each do |topic| %>
-<%= topic.description %>
-<% end %>
-<%= paginate @topics %>
+<div class="topic-index-wrapper">
+  <div class="container">
+    
+    <% @topics.find_each do |topic| %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="topic-index-single">
+            <h2 class="topic-author">
+              <%= topic.user.name %>
+            </h2>
+            <%= image_tag topic.image.url %>
+            <p class="topic-text">
+              <%= topic.description %>
+            </p>
+            <i class="far fa-comment-dots"></i>
+            <i class="far fa-heart"></i>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    
+  </div>
+  <%= paginate @topics %>
+</div>
