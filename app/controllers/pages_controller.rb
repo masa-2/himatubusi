@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   PER = 1
   
   def index
-    @topics = Topic.page(params[:page]).per(PER)
+    topic = params[:description].present? ? Topic.where("description LIKE ?", "%#{params[:description]}%") : Topic.all
+    @topics = topic.page(params[:page]).per(PER)
   end
 end

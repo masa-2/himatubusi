@@ -5,6 +5,11 @@
         <span><%= link_to "HIMATUBUSI", root_path, class: "nav-link" %></span>
       <% end %>
       
+      <%= form_with url: pages_index_path do |form| %>
+        <%= form.text_field :description %>
+        <%= form.submit %>
+      <% end %>
+      
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to new_topic_path, class: "nav-link listNew" do %>

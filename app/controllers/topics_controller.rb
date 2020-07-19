@@ -14,6 +14,10 @@ class TopicsController < ApplicationController
     end
   end
   
+  def index
+    @topic = Topic.where("description LIKE ?", "%params[:description]%")
+  end
+  
   private
   def topic_params
     params.require(:topic).permit(:image, :description)
