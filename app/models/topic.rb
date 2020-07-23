@@ -6,4 +6,15 @@ class Topic < ApplicationRecord
   belongs_to :user
   
   mount_uploader :image, ImageUploader
+  
+  def self.search(search)
+    if search
+      where(['description LIKE ?', "%#{search}%"])
+    else
+      all
+    end
+  end
+  
 end
+
+

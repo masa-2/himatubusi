@@ -5,9 +5,8 @@
         <span><%= link_to "HIMATUBUSI", root_path, class: "nav-link" %></span>
       <% end %>
       
-      <%= form_with url: pages_index_path do |form| %>
-        <%= form.text_field :description %>
-        <%= form.submit %>
+      <%= form_tag(root_path, method: :get) do %>
+        <%= text_field_tag :search, params[:search] %> <%= submit_tag "検索" %>
       <% end %>
       
       <ul class="nav navbar-nav navbar-right">
