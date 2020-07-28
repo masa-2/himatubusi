@@ -17,7 +17,17 @@
               <%= topic.description %>
             </p>
             <i class="far fa-comment-dots"></i>
-            <i class="far fa-heart"></i>
+            
+            <% if !topic.favorite_users.include?(current_user) %>
+              <%= link_to favorites_path(topic_id: topic.id), method: :post, remote: true do %>
+                <i class="far fa-heart"></i>
+              <% end %>
+            <% else %>
+              <%= link_to favorites_path(topic_id: topic.id), method: :delete, remote: true do %>
+                <i class="far fa-heart" aria-hidden="true"></i>
+              <% end %>
+            <% end %>
+            
           </div>
         </div>
       </div>
