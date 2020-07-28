@@ -24,10 +24,10 @@
               <% end %>
             <% else %>
               <%= link_to favorites_path(topic_id: topic.id), method: :delete, remote: true do %>
-                <i class="far fa-heart" aria-hidden="true"></i>
+                <i class="fas fa-heart" aria-hidden="true"></i>
               <% end %>
             <% end %>
-            
+            <%= topic.favorite_users.count %>
           </div>
         </div>
       </div>
