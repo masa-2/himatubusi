@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <header>
     <%= render 'partial/header' if current_user %>
 
     <% if flash[:notice] %>
@@ -22,10 +23,12 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-
+    </header>
+    
     <%= yield %>
     
-    <%= render 'partial/footer' %>
-
+    <footer>
+      <%= render 'partial/footer' %>
+    </footer>
   </body>
 </html>
