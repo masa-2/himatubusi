@@ -9,7 +9,9 @@ class FavoritesController < ApplicationController
     favorite.topic_id = params[:topic_id]
     
     if favorite.save
-      # redirect_to root_path, success: 'お気に入りにしました！'
+      respond_to do |format|
+        format.js { render :favorite_create }
+      end
     else
       # redirect_to root_path, danger: 'お気に入りに失敗しました。。'
     end
