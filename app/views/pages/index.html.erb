@@ -17,16 +17,9 @@
               <%= topic.description %>
             </p>
             
-            <% if !topic.favorite_users.include?(current_user) %>
-              <%= link_to favorites_path(topic_id: topic.id), method: :post, remote: true do %>
-                <i class="far fa-heart"></i>
-              <% end %>
-            <% else %>
-              <%= link_to favorites_path(topic_id: topic.id), method: :delete, remote: true do %>
-                <i class="fas fa-heart" aria-hidden="true"></i>
-              <% end %>
-            <% end %>
-            <%= topic.favorite_users.count %>
+            <span id="favorite_<%= topic.id %>">
+              <%= render partial: 'favorites/favorite', locals: { topic: topic} %>
+            </span>
             
             <%= link_to comments_path(topic_id: topic.id) do %>
               <i class="far fa-comment-dots"></i>
@@ -42,13 +35,6 @@
       </div>
     <% end %>
     
-    <h1>Ajax#index</h1>
-    <p id="hoge">赤色になるよ</p>
-    
-    <script>
-    $("#hoge").css("color","red")
-    </script>
-
   </div>
   <%= paginate @topics %>
 </div>
