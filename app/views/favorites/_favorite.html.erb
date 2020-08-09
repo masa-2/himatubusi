@@ -1,10 +1,10 @@
 <% unless topic.favorite_users.include?(current_user) %>
   <%= link_to favorites_path(topic_id: topic.id), method: :post, remote: true do %>
-    <i class="far fa-heart unlike"></i>
+    <i class="far fa-heart"></i>
   <% end %>
 <% else %>
   <%= link_to favorites_path(topic_id: topic.id), method: :delete, remote: true do %>
-    <i class="fas fa-heart like" aria-hidden="true"></i>
+    <i class="fas fa-heart" aria-hidden="true"></i>
   <% end %>
 <% end %>
 <%= topic.favorite_users.count %>
