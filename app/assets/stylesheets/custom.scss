@@ -11,7 +11,14 @@ body {
 .header {
   background: #026aa7;
   padding: 10px;
+  .topic-search {
+    position: relative;
+    left: 240px;
+  }
   .nav {
+    .nav-link {
+      font-size: 28px;
+    }
     .header_menu {
       display: flex;
       width: 100%;
@@ -164,8 +171,14 @@ body {
 .fa-heart {
   font-size: 28px;
   height: 30px;
-  margin-left: 20px;
+  // margin-left: 20px;
   color: red;
+}
+
+.fa-comment-dots {
+  font-size: 28px;
+  height: 30px;
+  margin-left: 20px;
 }
 
 footer {

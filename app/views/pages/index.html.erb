@@ -16,13 +16,6 @@
             <p class="topic-text">
               <%= topic.description %>
             </p>
-            <%= link_to comments_path(topic_id: topic.id) do %>
-              <i class="far fa-comment-dots"></i>
-            <% end %>
-            <h4>コメント</h4>
-            <% topic.comments.each do |comment| %>
-              <p class= "topic-text"><%= comment.content %></p>
-            <% end %>
             
             <% if !topic.favorite_users.include?(current_user) %>
               <%= link_to favorites_path(topic_id: topic.id), method: :post, remote: true do %>
@@ -34,6 +27,16 @@
               <% end %>
             <% end %>
             <%= topic.favorite_users.count %>
+            
+            <%= link_to comments_path(topic_id: topic.id) do %>
+              <i class="far fa-comment-dots"></i>
+            <% end %>
+            <h4>[コメント]</h4>
+            <% topic.comments.each do |comment| %>
+              <p class= "topic-text"><%= comment.content %></p>
+            <% end %>
+            
+            
           </div>
         </div>
       </div>
