@@ -1,15 +1,20 @@
 <header class="header">
   <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
     <div class="container">
-      <%= link_to root_path do %>
-        <span><%= link_to "HIMATUBUSI", root_path, class: "nav-link" %></span>
-      <% end %>
       
-      <p>Topic(description) Search</p>
-      <%= form_tag(root_path, method: :get) do %>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "検索" %>
-      <% end %>
+      <div class="title">
+        <%= link_to root_path do %>
+          <span><%= link_to "HIMATUBUSI", root_path, class: "nav-link" %></span>
+        <% end %>
+      </div>
+      
+      <div class="topic-search">
+        <p>Topic(description) Search</p>
+        <%= form_tag(root_path, method: :get) do %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "検索" %>
+        <% end %>
+      </div>
 
       <ul class="nav navbar-nav navbar-right">
         <li>

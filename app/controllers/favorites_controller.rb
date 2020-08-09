@@ -1,4 +1,6 @@
 class FavoritesController < ApplicationController
+  before_action :find_topic, only: [:create, :destroy]
+  
   def index
     @favorite_topics = current_user.favorite_topics
   end
@@ -8,19 +10,15 @@ class FavoritesController < ApplicationController
     favorite.user_id = current_user.id
     favorite.topic_id = params[:topic_id]
     
-    if favorite.save
-      respond_to do |format|
-        format.js { render :favorite_create }
-      end
-    else
-      # redirect_to root_path, danger: 'お気に入りに失敗しました。。'
-    end
+    favorite.save
+
   end
   
   def destroy
     Favorite.find_by(params[:topic_id]).destroy
-    flash[:success] = "お気に入り解除！！！！！"
-    # redirect_to root_path
   end
   
+  def find_topic
+    @topic = Topic.find_by(id: params[:topic_id])
+  end
 end
