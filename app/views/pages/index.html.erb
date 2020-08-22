@@ -4,13 +4,12 @@
       
       <% @topics.find_each do |topic| %>
         <div class="col-md-4 col-md-offset-4">
-          <div class="topic-index-single">
+          <div class="card" style="width: 18rem;">
+            <%= image_tag(topic.image.url, :class => "image card-image-top", :style => "width: 100%; height: 180px") %>
             <h3 class="topic-author">
               投稿主：<%= topic.user.name %>
             </h3>
-            <div class="image">
-              <%= image_tag topic.image.url %>
-            </div>
+              
             <p class="topic-text">
               [概要]:<%= topic.description %>
             </p>
@@ -30,7 +29,7 @@
         </div>
       <% end %>
 
+    <%= paginate @topics %>
     </div>
   </div>
-  <%= paginate @topics %>
 </div>

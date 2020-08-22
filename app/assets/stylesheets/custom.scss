@@ -15,10 +15,11 @@ body {
   .title {
     font-size: 36px;
   }
-  // .topic-search {
-  //   position: relative;
-  //   left: 240px;
-  // }
+  .topic-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .nav {
     .nav-link {
       font-size: 28px;
@@ -172,11 +173,10 @@ body {
   padding-top: 120px;
 }
 
-.topic-index-wrapper {
-  .image {
+.image {
     object-fit: cover;
-  }
 }
+
 
 .fa-heart {
   font-size: 28px;
@@ -197,3 +197,4 @@ footer {
   height: 100vh;
   text-align: center;
 }
+

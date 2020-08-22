@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  PER = 1
+  PER = 3
   
   def index
     @topics = Topic.search(params[:search]).page(params[:page]).per(PER)
