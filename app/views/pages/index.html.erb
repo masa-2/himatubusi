@@ -6,25 +6,27 @@
         <div class="col-md-4 col-md-offset-4">
           <div class="card" style="width: 18rem;">
             <%= image_tag(topic.image.url, :class => "image card-image-top", :style => "width: 100%; height: 180px") %>
-            <h3 class="topic-author">
-              投稿主：<%= topic.user.name %>
-            </h3>
+            <div class="card-body">
+              <h3 class="topic-author">
+                投稿主：<%= topic.user.name %>
+              </h3>
+                
+              <p class="topic-text">
+                [概要]:<%= topic.description %>
+              </p>
               
-            <p class="topic-text">
-              [概要]:<%= topic.description %>
-            </p>
-            
-            <span id="favorite_<%= topic.id %>">
-              <%= render partial: 'favorites/favorite', locals: { topic: topic} %>
-            </span>
-            
-            <%= link_to comments_path(topic_id: topic.id) do %>
-              <i class="far fa-comment-dots"></i>
-            <% end %>
-            <h4>[コメント]</h4>
-            <% topic.comments.each do |comment| %>
-              <p class= "topic-text"><%= comment.content %></p>
-            <% end %>
+              <span id="favorite_<%= topic.id %>">
+                <%= render partial: 'favorites/favorite', locals: { topic: topic} %>
+              </span>
+              
+              <%= link_to comments_path(topic_id: topic.id) do %>
+                <i class="far fa-comment-dots"></i>
+              <% end %>
+              <h4>[コメント]</h4>
+              <% topic.comments.each do |comment| %>
+                <p class= "topic-text"><%= comment.content %></p>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>

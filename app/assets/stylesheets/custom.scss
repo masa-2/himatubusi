@@ -192,9 +192,15 @@ body {
 }
 
 footer {
+  margin-top: 20px;
   color: #FFEED5;
   background-color: #454545;
   height: 100vh;
   text-align: center;
 }
 
+.card {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  // position: absolute;
+}
