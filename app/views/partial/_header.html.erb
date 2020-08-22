@@ -9,8 +9,7 @@
           <% end %>
         </div>
         
-        <div class="topic-search col-md-offset-1 col-md-3">
-          <p>Topic(description) Search</p>
+        <div class="topic-search col-md-offset-1 col-md-3", style="vertical-align: middle;">
           <%= form_tag(root_path, method: :get) do %>
             <%= text_field_tag :search, params[:search] %>
             <%= submit_tag "検索" %>
