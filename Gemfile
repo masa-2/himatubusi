@@ -67,7 +67,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails-ujs'
-gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'devise'
 gem 'font-awesome-sass'
 gem "carrierwave"
