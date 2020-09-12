@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <%= form_tag(root_path, method: :get, class: "navbar-form navbar-left") do %>
+    <%= form_tag(root_path, method: :get, class: "navbar-form navbar-left form-inline") do %>
       <div class="form-group">
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "検索" %>
