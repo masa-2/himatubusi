@@ -22,6 +22,11 @@
               <%= link_to comments_path(topic_id: topic.id) do %>
                 <i class="far fa-comment-dots"></i>
               <% end %>
+              
+              <p class="topic-text">
+                <span class="topic_category"><%= topic.topic_category&.name %></span>
+              </p>
+              
               <!--<h4>[コメント]</h4>-->
               <!--<% topic.comments.each do |comment| %>-->
               <!--  <p class= "topic-text"><%= comment.content %></p>-->

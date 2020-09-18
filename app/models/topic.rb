@@ -1,4 +1,7 @@
 class Topic < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :topic_category
+  
   validates :user_id, presence: true
   validates :description, presence: true
   validates :image, presence: true
