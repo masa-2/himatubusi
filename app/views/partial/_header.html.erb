@@ -10,19 +10,21 @@
         <%= submit_tag "検索" %>
       </div>
     <% end %>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active inline-block navbar-right">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <% unless user_signed_in? %>
+      <li class="inline-block navbar-right">
+          <%= link_to "ログイン", user_session_path, method: :post %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+      <% else %>
+        <li class="inline-block">
+          <%= link_to "投稿", new_topic_path %>
+        </li>
+        <li class="inline-block navbar-right">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+      <% end %>
     </ul>
+    
   </div>
 </nav>
