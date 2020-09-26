@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  PER = 3
+  
   def new
     @topic = Topic.new
   end
@@ -16,6 +18,26 @@ class TopicsController < ApplicationController
   
   def index
     @topic = Topic.where("description LIKE ?", "%params[:description]%")
+  end
+  
+  def show
+    @topics = current_user.topics.page(params[:page]).per(PER)
+  end
+  
+  def edit
+    @topic = current_user.topics.find_by(id:params[:id])
+  end
+  
+  def update
+    @topic = current_user.topics.find_by(id:params[:id])
+    @topic.update(topic_params)
+    redirect_to root_path
+  end
+  
+  def destroy
+    topic = current_user.topics
+    topic.destroy!
+    redirect_to topic_path(topic)
   end
   
   private

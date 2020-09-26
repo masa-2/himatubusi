@@ -23,9 +23,16 @@
                 <i class="far fa-comment-dots"></i>
               <% end %>
               
-              <p class="topic-text">
+              <div>
+                <p class="topic-text">
                 <span class="topic_category"><%= topic.topic_category&.name %></span>
-              </p>
+                </p>
+              </div>
+              
+              <div>
+                <%= link_to '詳細', edit_topic_path(topic), class: "btn btn-primary" %>
+              </div>
+              
               
               <!--<h4>[コメント]</h4>-->
               <!--<% topic.comments.each do |comment| %>-->
