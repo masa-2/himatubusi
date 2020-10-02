@@ -5,25 +5,23 @@
   </button>
   
   <div class="collapse navbar-collapse" id="navbarNav">
-    <%= form_tag(root_path, method: :get, class: "navbar-form navbar-left form-inline") do %>
-      <div class="form-group mr-auto">
+    <%= form_tag(root_path, method: :get, class: "mr-auto navbar-form navbar-left form-inline") do %>
+      <div class="form-group">
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "検索" %>
       </div>
     <% end %>
     
     <ul class="nav navbar-nav navbar-right">
-      <% unless user_signed_in? %>
-      <li class="inline-block navbar-right">
-          <%= link_to "ログイン", user_session_path, method: :post %>
-      </li>
-    
-      <% else %>
+      <% if user_signed_in? %>
         <li class="inline-block">
-          <%= link_to "投稿", new_topic_path %>
+          <%= link_to "編集", edit_topic_path(@topics), class: "nav-link" %>
+        </li>
+        <li class="inline-block">
+          <%= link_to "投稿", new_topic_path, class: "nav-link" %>
         </li>
         <li class="inline-block navbar-right">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
       <% end %>
     </ul>

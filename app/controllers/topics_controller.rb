@@ -31,11 +31,11 @@ class TopicsController < ApplicationController
   def update
     @topic = current_user.topics.find_by(id:params[:id])
     @topic.update(topic_params)
-    redirect_to root_path
+    redirect_to topic_path(@topic)
   end
   
   def destroy
-    topic = current_user.topics
+    topic = current_user.topics.find_by(id:params[:id])
     topic.destroy!
     redirect_to topic_path(topic)
   end
