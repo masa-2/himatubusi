@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'pages#index'
-  resources :topics
+  resources :topics, except: [:show] do
+    collection do
+      get :show 
+    end
+  end
   
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'

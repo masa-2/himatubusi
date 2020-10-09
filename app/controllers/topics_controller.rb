@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  PER = 3
+  PER = 6
   
   def new
     @topic = Topic.new

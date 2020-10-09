@@ -3,7 +3,7 @@
     <div class="row">
       
       <% @topics.find_each do |topic| %>
-        <div class="col-auto">
+        <div class="col-auto responsive_width">
           <div class="card" style="width: 18rem;">
             <%= image_tag(topic.image.url, :class => "image card-image-top", :style => "width: 100%; height: 180px") %>
             <div class="card-body">
@@ -24,7 +24,7 @@
               <% end %>
               
               <p class="topic-text">
-                <span class="topic_category"><%= topic.topic_category&.name %></span>
+                <span class="btn topic_category" style="pointer-events:none;"><%= topic.topic_category&.name %></span>
               </p>
               
               <!--<h4>[コメント]</h4>-->

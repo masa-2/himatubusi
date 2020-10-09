@@ -209,9 +209,14 @@ footer {
   color: #fff;
   background-color: #eb6100;
   border-radius: 50vh;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .paginate {
   margin-top: 20px;
+}
+
+@media screen and (max-width:1200px) {
+  /*　画面サイズが480pxからはここを読み込む　*/
+ .responsive_width { margin: 0 auto; }
 }
