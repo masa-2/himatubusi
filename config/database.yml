@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: himatubusi_production
-  username: himatubusi
-  password: <%= ENV['HIMATUBUSI_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
