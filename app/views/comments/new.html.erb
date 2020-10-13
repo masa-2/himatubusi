@@ -3,9 +3,13 @@
     <div class="row">
       <div class="col-md-6 offset-md-3">
         
-        <% @topic.comments.each do |comment| %>
-         <div><%= comment.content %></div>
-        <% end %>
+        <div class=comment-index>
+          <h4>[コメント]</h4>
+          <% @topic.comments.each do |comment| %>
+           <div><%= comment.content %></div>
+          <% end %>
+        </div>
+        
         <h1 class="text-center">Add Comment</h1>
         <%= form_for @comment, url: comments_create_path do |f| %>
           <div class="form-group">

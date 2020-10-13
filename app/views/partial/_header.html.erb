@@ -3,26 +3,28 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  
   <div class="collapse navbar-collapse" id="navbarNav">
-    <%= form_tag(root_path, method: :get, class: "navbar-form navbar-left") do %>
+    <%= form_tag(root_path, method: :get, class: "mr-auto navbar-form navbar-left form-inline") do %>
       <div class="form-group">
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "検索" %>
       </div>
     <% end %>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active inline-block navbar-right">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li class="inline-block">
+          <%= link_to "編集", topics_path, class: "nav-link" %>
+        </li>
+        <li class="inline-block">
+          <%= link_to "投稿", new_topic_path, class: "nav-link" %>
+        </li>
+        <li class="inline-block navbar-right">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
+    
   </div>
 </nav>

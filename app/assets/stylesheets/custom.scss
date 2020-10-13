@@ -204,3 +204,33 @@ footer {
   border: 1px solid #ccc;
   // position: absolute;
 }
+
+.topic_category {
+  color: #fff;
+  background-color: #eb6100;
+  border-radius: 50vh;
+  font-size: 12px;
+}
+
+.paginate {
+  margin-top: 20px;
+}
+
+@media screen and (max-width:1200px) {
+  /*　画面サイズが480pxからはここを読み込む　*/
+ .responsive_width { margin: 0 auto; }
+}
+
+@media screen and (min-width:1200px) {
+  /*　画面サイズが480pxからはここを読み込む　*/
+ .row { margin-left: 70px; }
+}
+
+#card_detail_link {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

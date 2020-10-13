@@ -73,3 +73,4 @@ gem 'font-awesome-sass'
 gem "carrierwave"
 gem 'kaminari'
 gem "jquery-rails"
+gem 'active_hash'
