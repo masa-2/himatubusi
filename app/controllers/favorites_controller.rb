@@ -6,16 +6,12 @@ class FavoritesController < ApplicationController
   end
   
   def create
-    favorite = Favorite.new
-    favorite.user_id = current_user.id
-    favorite.topic_id = params[:topic_id]
-    
+    favorite = current_user.favorites.new(topic_id: params[:topic_id])
     favorite.save
-
   end
   
   def destroy
-    Favorite.find_by(params[:topic_id]).destroy
+    current_user.favorites.find_by(topic_id: params[:topic_id]).destroy
   end
   
   def find_topic
