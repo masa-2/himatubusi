@@ -25,17 +25,17 @@ class TopicsController < ApplicationController
   end
   
   def edit
-    @topic = current_user.topics.find_by(id:params[:id])
+    @topic = current_user.topics.find_by(id: params[:id])
   end
   
   def update
-    @topic = current_user.topics.find_by(id:params[:id])
+    @topic = current_user.topics.find_by(id: params[:id])
     @topic.update(topic_params)
-    redirect_to topic_path(@topic)
+    redirect_to topics_path
   end
   
   def destroy
-    topic = current_user.topics.find_by(id:params[:id])
+    topic = current_user.topics.find_by(id: params[:id])
     topic.destroy!
     redirect_to topic_path(topic)
   end

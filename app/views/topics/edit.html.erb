@@ -23,7 +23,7 @@
             <%= f.collection_select(:topic_category_id, TopicCategory.all, :id, :name) %>
           </div>
           
-          <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
+          <%= f.submit '更新', class: 'btn btn-black btn-block' %>
           <%= link_to '削除', topic_path(@topic), class: "btn btn-danger", method: :delete %>
         <% end %>
       </div>
